@@ -1,3 +1,6 @@
 update git:
 Zwei beschleunigungs platten
 Calc Button
+
+ToDo:
+distorschen einfügen
