@@ -1,9 +1,0 @@
-update git:
-Zwei beschleunigungs platten
-Calc Button
-30.04.2020
-
-
-ToDo:
-distorschen einfügen
-

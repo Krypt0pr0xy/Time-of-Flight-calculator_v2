@@ -1,5 +1,6 @@
 ﻿namespace TOFCALC
 {
+
     partial class Form1
     {
         /// <summary>
@@ -32,11 +33,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rb1 = new System.Windows.Forms.RadioButton();
+            this.rb2 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,24 +43,27 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.b_CALC = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.num_mass = new System.Windows.Forms.NumericUpDown();
+            this.num_V0 = new System.Windows.Forms.NumericUpDown();
+            this.num_d1 = new System.Windows.Forms.NumericUpDown();
+            this.num_d2 = new System.Windows.Forms.NumericUpDown();
+            this.num_d3 = new System.Windows.Forms.NumericUpDown();
+            this.num_Pot1 = new System.Windows.Forms.NumericUpDown();
+            this.num_Pot2 = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.num_x = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -70,6 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_mass)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_V0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pot1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pot2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_x)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -99,25 +109,25 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "2";
             // 
-            // radioButton2
+            // rb1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(141, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rb1.AutoSize = true;
+            this.rb1.Location = new System.Drawing.Point(141, 31);
+            this.rb1.Name = "rb1";
+            this.rb1.Size = new System.Drawing.Size(14, 13);
+            this.rb1.TabIndex = 6;
+            this.rb1.TabStop = true;
+            this.rb1.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rb2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(179, 31);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(14, 13);
-            this.radioButton3.TabIndex = 7;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rb2.AutoSize = true;
+            this.rb2.Location = new System.Drawing.Point(179, 31);
+            this.rb2.Name = "rb2";
+            this.rb2.Size = new System.Drawing.Size(14, 13);
+            this.rb2.TabIndex = 7;
+            this.rb2.TabStop = true;
+            this.rb2.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -127,20 +137,6 @@
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Masse[u]:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(398, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(77, 20);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(533, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(77, 20);
-            this.textBox2.TabIndex = 13;
             // 
             // label7
             // 
@@ -207,44 +203,23 @@
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(127, 332);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(72, 20);
-            this.textBox3.TabIndex = 22;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(86, 335);
+            this.label8.Location = new System.Drawing.Point(80, 339);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 13);
+            this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "d1[m]:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(264, 336);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(72, 20);
-            this.textBox4.TabIndex = 24;
+            this.label8.Text = "d1[cm]:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(218, 339);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(36, 13);
+            this.label9.Size = new System.Drawing.Size(42, 13);
             this.label9.TabIndex = 23;
-            this.label9.Text = "d2[m]:";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(73, 104);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(39, 20);
-            this.textBox6.TabIndex = 28;
+            this.label9.Text = "d2[cm]:";
             // 
             // label11
             // 
@@ -254,13 +229,6 @@
             this.label11.Size = new System.Drawing.Size(45, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Pot1[V]:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(201, 104);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(39, 20);
-            this.textBox7.TabIndex = 30;
             // 
             // label12
             // 
@@ -274,7 +242,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(489, 111);
+            this.label14.Location = new System.Drawing.Point(489, 107);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(20, 13);
             this.label14.TabIndex = 33;
@@ -300,37 +268,23 @@
             this.pictureBox8.TabIndex = 38;
             this.pictureBox8.TabStop = false;
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(144, 177);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(43, 20);
-            this.textBox9.TabIndex = 39;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(109, 180);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(29, 13);
+            this.label17.Size = new System.Drawing.Size(35, 13);
             this.label17.TabIndex = 42;
-            this.label17.Text = "x[m]:";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(404, 336);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(72, 20);
-            this.textBox11.TabIndex = 46;
+            this.label17.Text = "x[cm]:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(358, 339);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(36, 13);
+            this.label19.Size = new System.Drawing.Size(42, 13);
             this.label19.TabIndex = 45;
-            this.label19.Text = "d3[m]:";
+            this.label19.Text = "d3[cm]:";
             // 
             // pictureBox9
             // 
@@ -342,14 +296,15 @@
             this.pictureBox9.TabIndex = 44;
             this.pictureBox9.TabStop = false;
             // 
-            // button1
+            // b_CALC
             // 
-            this.button1.Location = new System.Drawing.Point(481, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 38);
-            this.button1.TabIndex = 47;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.b_CALC.Location = new System.Drawing.Point(481, 384);
+            this.b_CALC.Name = "b_CALC";
+            this.b_CALC.Size = new System.Drawing.Size(95, 38);
+            this.b_CALC.TabIndex = 47;
+            this.b_CALC.Text = "Calculate";
+            this.b_CALC.UseVisualStyleBackColor = true;
+            this.b_CALC.Click += new System.EventHandler(this.b_CALC_Click);
             // 
             // label2
             // 
@@ -360,28 +315,106 @@
             this.label2.TabIndex = 48;
             this.label2.Text = "0V";
             // 
+            // num_mass
+            // 
+            this.num_mass.Location = new System.Drawing.Point(404, 31);
+            this.num_mass.Name = "num_mass";
+            this.num_mass.Size = new System.Drawing.Size(76, 20);
+            this.num_mass.TabIndex = 49;
+            // 
+            // num_V0
+            // 
+            this.num_V0.Location = new System.Drawing.Point(533, 31);
+            this.num_V0.Name = "num_V0";
+            this.num_V0.Size = new System.Drawing.Size(76, 20);
+            this.num_V0.TabIndex = 50;
+            // 
+            // num_d1
+            // 
+            this.num_d1.Location = new System.Drawing.Point(133, 337);
+            this.num_d1.Name = "num_d1";
+            this.num_d1.Size = new System.Drawing.Size(66, 20);
+            this.num_d1.TabIndex = 51;
+            // 
+            // num_d2
+            // 
+            this.num_d2.Location = new System.Drawing.Point(274, 337);
+            this.num_d2.Name = "num_d2";
+            this.num_d2.Size = new System.Drawing.Size(66, 20);
+            this.num_d2.TabIndex = 52;
+            // 
+            // num_d3
+            // 
+            this.num_d3.Location = new System.Drawing.Point(414, 337);
+            this.num_d3.Name = "num_d3";
+            this.num_d3.Size = new System.Drawing.Size(66, 20);
+            this.num_d3.TabIndex = 53;
+            // 
+            // num_Pot1
+            // 
+            this.num_Pot1.Location = new System.Drawing.Point(72, 105);
+            this.num_Pot1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.num_Pot1.Name = "num_Pot1";
+            this.num_Pot1.Size = new System.Drawing.Size(66, 20);
+            this.num_Pot1.TabIndex = 54;
+            // 
+            // num_Pot2
+            // 
+            this.num_Pot2.Location = new System.Drawing.Point(205, 105);
+            this.num_Pot2.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.num_Pot2.Name = "num_Pot2";
+            this.num_Pot2.Size = new System.Drawing.Size(66, 20);
+            this.num_Pot2.TabIndex = 55;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(218, 397);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "label5";
+            // 
+            // num_x
+            // 
+            this.num_x.Location = new System.Drawing.Point(144, 177);
+            this.num_x.Name = "num_x";
+            this.num_x.Size = new System.Drawing.Size(49, 20);
+            this.num_x.TabIndex = 57;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(635, 434);
+            this.Controls.Add(this.num_x);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.num_Pot2);
+            this.Controls.Add(this.num_Pot1);
+            this.Controls.Add(this.num_d3);
+            this.Controls.Add(this.num_d2);
+            this.Controls.Add(this.num_d1);
+            this.Controls.Add(this.num_V0);
+            this.Controls.Add(this.num_mass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.b_CALC);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox4);
@@ -389,12 +422,10 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.rb2);
+            this.Controls.Add(this.rb1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -408,6 +439,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_mass)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_V0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pot1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_Pot2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_x)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,11 +457,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rb1;
+        private System.Windows.Forms.RadioButton rb2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -430,24 +467,27 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button b_CALC;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown num_mass;
+        private System.Windows.Forms.NumericUpDown num_V0;
+        private System.Windows.Forms.NumericUpDown num_d1;
+        private System.Windows.Forms.NumericUpDown num_d2;
+        private System.Windows.Forms.NumericUpDown num_d3;
+        private System.Windows.Forms.NumericUpDown num_Pot1;
+        private System.Windows.Forms.NumericUpDown num_Pot2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown num_x;
     }
 }
 

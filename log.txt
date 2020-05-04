@@ -1,0 +1,3 @@
+update git:
+04.05.2020
+Berechnungen hinzugefügt
