@@ -26,7 +26,7 @@ namespace TOFCALC
 
         private void b_CALC_Click(object sender, EventArgs e)
         {
-            double E1 = (double)((num_Pot2.Value - num_Pot1.Value) / (num_d1.Value*100));
+            //double E1 = (double)((num_Pot2.Value - num_Pot1.Value) / (num_d1.Value*100));
 
             double q = Constants.e;
 
@@ -40,19 +40,32 @@ namespace TOFCALC
                 }
 
             double m = Constants.m * (double)num_mass.Value;
-            
-            double va1 = (q * E1) / m;
 
-            double t1 = Math.Sqrt((2 * va1 * (double)(num_d1.Value * 100) - 2 * va1 * (double)(num_x.Value * 100) + (double)(num_V0.Value)) / Math.Pow(va1, 2)) - ((double)(num_V0.Value) / va1);
+            double d1 = (double)num_d1.Value * 100;
+            double d2 = (double)num_d2.Value * 100;
+            double d3 = (double)num_d3.Value * 100;
+            double x = (double)num_x.Value * 100;
+            double Vzi = (double)num_Vzi.Value;
+            double zi = (double)num_Zi.Value * 100;
+            double Pot1 = (double)num_Pot1.Value;
+            double Pot2 = (double)num_Pot2.Value;
 
-            double V1 = va1 * t1+ (double)num_V0.Value;
 
-            double E2 = (double)((num_Pot2.Value) / (num_d2.Value * 100));
 
-            double va2 = (q * E2) / m;
+            double Va = Math.Sqrt(2 * x * q * ((Pot2 - Pot1) / m));
 
-            double t2 = Math.Sqrt((2 * va2 * (double)(num_d1.Value * 100)+) / Math.Pow(va1, 2)) - ((double)(num_V0.Value) / va1);
-            label5.Text = va1.ToString();
+            double ta = ((2 * d1) / Va) * Math.Sqrt(1 + ((Math.Pow(Vzi, 2)) / Va) - (zi / d1) - (Vzi / Va));
+
+            double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2 / m));
+
+            double tb = ((2 * d2) / Va) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)));
+
+            double tlf = (d3 * (1 / Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2))));
+
+            double TOF = ta + tb + tlf;
+
+            label10.Text = TOF.ToString();
+
         }
     }
 }
