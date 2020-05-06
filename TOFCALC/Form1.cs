@@ -30,14 +30,14 @@ namespace TOFCALC
 
             double q = Constants.e;
 
-                if(rb1.Checked)
-                {
-                    q *= 1;
-                }
-                else if(rb2.Checked)
-                {
-                    q *= 2;
-                }
+            if (rb1.Checked)
+            {
+                q *= 1;
+            }
+            else if (rb2.Checked)
+            {
+                q *= 2;
+            }
 
             double m = Constants.m * (double)num_mass.Value;
 

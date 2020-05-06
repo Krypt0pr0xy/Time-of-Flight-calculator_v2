@@ -1,3 +1,5 @@
 update git:
 04.05.2020
 Berechnungen hinzugefügt
+06.05.2020
+Neue Berechnungen 
