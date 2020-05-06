@@ -20,7 +20,7 @@ namespace TOFCALC
         public class Constants
         {
             public const double e = 1.602176462e-19;
-            public const double m = 5.48579909065e-4;
+            public const double m = 1.6605306660e-27;
 
         }
 
@@ -52,9 +52,9 @@ namespace TOFCALC
 
 
 
-            double Va = Math.Sqrt(2 * x * q * ((Pot2 - Pot1) / m));
+            double Va = Math.Sqrt(2 * x * q * ((Math.Abs(Pot2 - Pot1)) / m));
 
-            double ta = ((2 * d1) / Va) * Math.Sqrt(1 + ((Math.Pow(Vzi / Va, 2))) - (zi / d1) - (Vzi / Va));
+            double ta = ((2 * d1) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d1))) - (Vzi / Va));
 
             double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2 / m));
 
