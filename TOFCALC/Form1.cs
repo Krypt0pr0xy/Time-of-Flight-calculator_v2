@@ -41,12 +41,12 @@ namespace TOFCALC
 
             double m = Constants.m * (double)num_mass.Value;
 
-            double d1 = (double)num_d1.Value * 100;
-            double d2 = (double)num_d2.Value * 100;
-            double d3 = (double)num_d3.Value * 100;
-            double x = (double)num_x.Value * 100;
+            double d1 = (double)num_d1.Value / 100;
+            double d2 = (double)num_d2.Value / 100;
+            double d3 = (double)num_d3.Value / 100;
+            double x = (double)num_x.Value / 100;
             double Vzi = (double)num_Vzi.Value;
-            double zi = (double)num_Zi.Value * 100;
+            double zi = (double)num_Zi.Value / 100;
             double Pot1 = (double)num_Pot1.Value;
             double Pot2 = (double)num_Pot2.Value;
 
@@ -54,18 +54,26 @@ namespace TOFCALC
 
             double Va = Math.Sqrt(2 * x * q * ((Pot2 - Pot1) / m));
 
-            double ta = ((2 * d1) / Va) * Math.Sqrt(1 + ((Math.Pow(Vzi, 2)) / Va) - (zi / d1) - (Vzi / Va));
+            double ta = ((2 * d1) / Va) * Math.Sqrt(1 + ((Math.Pow(Vzi / Va, 2))) - (zi / d1) - (Vzi / Va));
 
             double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2 / m));
 
-            double tb = ((2 * d2) / Va) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)));
+            double tb = ((2 * d2) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)));
 
-            double tlf = (d3 * (1 / Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2))));
+            double tlf = d3 * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2))));
 
             double TOF = ta + tb + tlf;
 
             label10.Text = TOF.ToString();
 
+        }
+
+        private void num_d2_ValueChanged(object sender, EventArgs e)
+        {
+            if(num_d2.Value == 0)
+            {
+                num_Pot2.Value = 0;
+            }
         }
     }
 }

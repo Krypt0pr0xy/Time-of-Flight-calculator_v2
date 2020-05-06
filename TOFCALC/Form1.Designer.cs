@@ -338,6 +338,7 @@
             this.num_d2.Name = "num_d2";
             this.num_d2.Size = new System.Drawing.Size(66, 20);
             this.num_d2.TabIndex = 52;
+            this.num_d2.ValueChanged += new System.EventHandler(this.num_d2_ValueChanged);
             // 
             // num_d3
             // 
