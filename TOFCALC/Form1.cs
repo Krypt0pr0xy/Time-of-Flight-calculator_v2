@@ -41,9 +41,9 @@ namespace TOFCALC
 
             double m = Constants.m * (double)num_mass.Value;
 
-            double d1 = (double)num_d1.Value / 100;
-            double d2 = (double)num_d2.Value / 100;
-            double d3 = (double)num_d3.Value / 100;
+            double d_Quelle = (double)num_d_Quelle.Value / 100;
+            double d_Beschleunigung = (double)num_d_Beschleunigung.Value / 100;
+            double d_Drifstrecke = (double)num_d_Drifstrecke.Value / 100;
             double x = (double)num_x.Value / 100;
             double Vzi = (double)num_Vzi.Value;
             double zi = (double)num_Zi.Value / 100;
@@ -52,28 +52,64 @@ namespace TOFCALC
 
 
 
-            double Va = Math.Sqrt(2 * x * q * ((Math.Abs(Pot2 - Pot1)) / m));
+            double Va = Math.Sqrt(2 * x * q * ((Pot1 - Pot2) / m));
 
-            double ta = ((2 * d1) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d1))) - (Vzi / Va));
+            double ta = ((2 * d_Quelle) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d_Quelle))) - (Vzi / Va));
 
             double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2 / m));
 
-            double tb = ((2 * d2) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2)));
+            double tb = ((2 * d_Beschleunigung) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)));
 
-            double tlf = d3 * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d1) * Math.Pow(Va, 2))));
+            double tlf = d_Drifstrecke * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2))));
 
             double TOF = ta + tb + tlf;
 
-            label10.Text = TOF.ToString();
+            l_ta.Text = ta.ToString();
+
+            l_tb.Text = tb.ToString();
+
+            l_tlf.Text = tlf.ToString();
+
+            l_TOF.Text = TOF.ToString();
 
         }
 
-        private void num_d2_ValueChanged(object sender, EventArgs e)
+        private void num_d_Beschleunigung_ValueChanged(object sender, EventArgs e)
         {
-            if(num_d2.Value == 0)
+            if(num_d_Beschleunigung.Value == 0)
             {
                 num_Pot2.Value = 0;
             }
+        }
+
+        private void num_Pot1_ValueChanged(object sender, EventArgs e)
+        {
+            while(num_Pot1.Value <= num_Pot2.Value)
+            {
+                num_Pot2.Value -= 1;
+            }
+        }
+
+        private void num_Pot2_ValueChanged(object sender, EventArgs e)
+        {
+            while (num_Pot1.Value <= num_Pot2.Value)
+            {
+                num_Pot1.Value += 1;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxElemente.Text == "Wasserstoff")
+            {
+                num_mass.Value = (decimal)1.008;
+            }
+            else if (comboBoxElemente.Text == "Helium")
+            {
+                num_mass.Value = (decimal)4.002602;
+            }
+
+
         }
     }
 }

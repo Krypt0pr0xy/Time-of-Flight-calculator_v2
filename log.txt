@@ -3,3 +3,6 @@ update git:
 Berechnungen hinzugefügt
 06.05.2020
 Neue Berechnungen 
+07.05.2020
+user DAU schutz
+comboBox für auswahl

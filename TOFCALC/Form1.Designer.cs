@@ -55,9 +55,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.num_mass = new System.Windows.Forms.NumericUpDown();
             this.num_Vzi = new System.Windows.Forms.NumericUpDown();
-            this.num_d1 = new System.Windows.Forms.NumericUpDown();
-            this.num_d2 = new System.Windows.Forms.NumericUpDown();
-            this.num_d3 = new System.Windows.Forms.NumericUpDown();
+            this.num_d_Quelle = new System.Windows.Forms.NumericUpDown();
+            this.num_d_Beschleunigung = new System.Windows.Forms.NumericUpDown();
+            this.num_d_Drifstrecke = new System.Windows.Forms.NumericUpDown();
             this.num_Pot1 = new System.Windows.Forms.NumericUpDown();
             this.num_Pot2 = new System.Windows.Forms.NumericUpDown();
             this.num_x = new System.Windows.Forms.NumericUpDown();
@@ -67,6 +67,15 @@
             this.num_Zi = new System.Windows.Forms.NumericUpDown();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.l_ta = new System.Windows.Forms.Label();
+            this.l_tb = new System.Windows.Forms.Label();
+            this.l_tlf = new System.Windows.Forms.Label();
+            this.l_TOF = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.comboBoxElemente = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -76,9 +85,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_mass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Vzi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Quelle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Beschleunigung)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Drifstrecke)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pot1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pot2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_x)).BeginInit();
@@ -138,7 +147,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(339, 33);
+            this.label6.Location = new System.Drawing.Point(345, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 10;
@@ -202,20 +211,20 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(93, 339);
+            this.label8.Location = new System.Drawing.Point(104, 337);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 21;
-            this.label8.Text = "d1[cm]:";
+            this.label8.Text = "d_Quelle[cm]:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(256, 341);
+            this.label9.Location = new System.Drawing.Point(241, 339);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.Size = new System.Drawing.Size(118, 13);
             this.label9.TabIndex = 23;
-            this.label9.Text = "d2[cm]:";
+            this.label9.Text = "d_Beschleunigung[cm]:";
             // 
             // label11
             // 
@@ -268,9 +277,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(462, 339);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(42, 13);
+            this.label19.Size = new System.Drawing.Size(96, 13);
             this.label19.TabIndex = 45;
-            this.label19.Text = "d3[cm]:";
+            this.label19.Text = "d_Driftstrecke[cm]:";
             // 
             // pictureBox9
             // 
@@ -284,9 +293,9 @@
             // 
             // b_CALC
             // 
-            this.b_CALC.Location = new System.Drawing.Point(481, 384);
+            this.b_CALC.Location = new System.Drawing.Point(507, 390);
             this.b_CALC.Name = "b_CALC";
-            this.b_CALC.Size = new System.Drawing.Size(95, 38);
+            this.b_CALC.Size = new System.Drawing.Size(104, 51);
             this.b_CALC.TabIndex = 47;
             this.b_CALC.Text = "Calculate";
             this.b_CALC.UseVisualStyleBackColor = true;
@@ -303,6 +312,7 @@
             // 
             // num_mass
             // 
+            this.num_mass.DecimalPlaces = 5;
             this.num_mass.Location = new System.Drawing.Point(404, 31);
             this.num_mass.Name = "num_mass";
             this.num_mass.Size = new System.Drawing.Size(76, 20);
@@ -325,27 +335,29 @@
             this.num_Vzi.Size = new System.Drawing.Size(76, 20);
             this.num_Vzi.TabIndex = 50;
             // 
-            // num_d1
+            // num_d_Quelle
             // 
-            this.num_d1.Location = new System.Drawing.Point(141, 337);
-            this.num_d1.Name = "num_d1";
-            this.num_d1.Size = new System.Drawing.Size(66, 20);
-            this.num_d1.TabIndex = 51;
+            this.num_d_Quelle.DecimalPlaces = 1;
+            this.num_d_Quelle.Location = new System.Drawing.Point(110, 355);
+            this.num_d_Quelle.Name = "num_d_Quelle";
+            this.num_d_Quelle.Size = new System.Drawing.Size(66, 20);
+            this.num_d_Quelle.TabIndex = 51;
             // 
-            // num_d2
+            // num_d_Beschleunigung
             // 
-            this.num_d2.Location = new System.Drawing.Point(301, 339);
-            this.num_d2.Name = "num_d2";
-            this.num_d2.Size = new System.Drawing.Size(66, 20);
-            this.num_d2.TabIndex = 52;
-            this.num_d2.ValueChanged += new System.EventHandler(this.num_d2_ValueChanged);
+            this.num_d_Beschleunigung.DecimalPlaces = 1;
+            this.num_d_Beschleunigung.Location = new System.Drawing.Point(278, 355);
+            this.num_d_Beschleunigung.Name = "num_d_Beschleunigung";
+            this.num_d_Beschleunigung.Size = new System.Drawing.Size(66, 20);
+            this.num_d_Beschleunigung.TabIndex = 52;
             // 
-            // num_d3
+            // num_d_Drifstrecke
             // 
-            this.num_d3.Location = new System.Drawing.Point(510, 337);
-            this.num_d3.Name = "num_d3";
-            this.num_d3.Size = new System.Drawing.Size(66, 20);
-            this.num_d3.TabIndex = 53;
+            this.num_d_Drifstrecke.DecimalPlaces = 1;
+            this.num_d_Drifstrecke.Location = new System.Drawing.Point(475, 355);
+            this.num_d_Drifstrecke.Name = "num_d_Drifstrecke";
+            this.num_d_Drifstrecke.Size = new System.Drawing.Size(66, 20);
+            this.num_d_Drifstrecke.TabIndex = 53;
             // 
             // num_Pot1
             // 
@@ -355,9 +367,20 @@
             0,
             0,
             0});
+            this.num_Pot1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.num_Pot1.Name = "num_Pot1";
             this.num_Pot1.Size = new System.Drawing.Size(66, 20);
             this.num_Pot1.TabIndex = 54;
+            this.num_Pot1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.num_Pot1.ValueChanged += new System.EventHandler(this.num_Pot1_ValueChanged);
             // 
             // num_Pot2
             // 
@@ -371,9 +394,16 @@
             this.num_Pot2.Name = "num_Pot2";
             this.num_Pot2.Size = new System.Drawing.Size(66, 20);
             this.num_Pot2.TabIndex = 55;
+            this.num_Pot2.ValueChanged += new System.EventHandler(this.num_Pot2_ValueChanged);
             // 
             // num_x
             // 
+            this.num_x.DecimalPlaces = 1;
+            this.num_x.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.num_x.Location = new System.Drawing.Point(168, 177);
             this.num_x.Name = "num_x";
             this.num_x.Size = new System.Drawing.Size(49, 20);
@@ -410,6 +440,12 @@
             // 
             // num_Zi
             // 
+            this.num_Zi.DecimalPlaces = 1;
+            this.num_Zi.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.num_Zi.Location = new System.Drawing.Point(133, 271);
             this.num_Zi.Name = "num_Zi";
             this.num_Zi.Size = new System.Drawing.Size(48, 20);
@@ -428,17 +464,110 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(314, 384);
+            this.label10.Location = new System.Drawing.Point(12, 390);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
+            this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 63;
-            this.label10.Text = "Output";
+            this.label10.Text = "Output:";
+            // 
+            // l_ta
+            // 
+            this.l_ta.AutoSize = true;
+            this.l_ta.Location = new System.Drawing.Point(104, 390);
+            this.l_ta.Name = "l_ta";
+            this.l_ta.Size = new System.Drawing.Size(16, 13);
+            this.l_ta.TabIndex = 64;
+            this.l_ta.Text = "ta";
+            // 
+            // l_tb
+            // 
+            this.l_tb.AutoSize = true;
+            this.l_tb.Location = new System.Drawing.Point(104, 415);
+            this.l_tb.Name = "l_tb";
+            this.l_tb.Size = new System.Drawing.Size(16, 13);
+            this.l_tb.TabIndex = 65;
+            this.l_tb.Text = "tb";
+            // 
+            // l_tlf
+            // 
+            this.l_tlf.AutoSize = true;
+            this.l_tlf.Location = new System.Drawing.Point(104, 440);
+            this.l_tlf.Name = "l_tlf";
+            this.l_tlf.Size = new System.Drawing.Size(15, 13);
+            this.l_tlf.TabIndex = 66;
+            this.l_tlf.Text = "tlf";
+            // 
+            // l_TOF
+            // 
+            this.l_TOF.AutoSize = true;
+            this.l_TOF.Location = new System.Drawing.Point(104, 468);
+            this.l_TOF.Name = "l_TOF";
+            this.l_TOF.Size = new System.Drawing.Size(28, 13);
+            this.l_TOF.TabIndex = 67;
+            this.l_TOF.Text = "TOF";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(55, 468);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(31, 13);
+            this.label13.TabIndex = 71;
+            this.label13.Text = "TOF:";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(55, 440);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 13);
+            this.label15.TabIndex = 70;
+            this.label15.Text = "tlf:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(55, 415);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(19, 13);
+            this.label16.TabIndex = 69;
+            this.label16.Text = "tb:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(55, 390);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 68;
+            this.label18.Text = "ta:";
+            // 
+            // comboBoxElemente
+            // 
+            this.comboBoxElemente.FormattingEnabled = true;
+            this.comboBoxElemente.Items.AddRange(new object[] {
+            "Wasserstoff",
+            "Helium"});
+            this.comboBoxElemente.Location = new System.Drawing.Point(257, 30);
+            this.comboBoxElemente.Name = "comboBoxElemente";
+            this.comboBoxElemente.Size = new System.Drawing.Size(82, 21);
+            this.comboBoxElemente.TabIndex = 72;
+            this.comboBoxElemente.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 434);
+            this.ClientSize = new System.Drawing.Size(669, 502);
+            this.Controls.Add(this.comboBoxElemente);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.l_TOF);
+            this.Controls.Add(this.l_tlf);
+            this.Controls.Add(this.l_tb);
+            this.Controls.Add(this.l_ta);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.num_Zi);
@@ -448,9 +577,9 @@
             this.Controls.Add(this.num_x);
             this.Controls.Add(this.num_Pot2);
             this.Controls.Add(this.num_Pot1);
-            this.Controls.Add(this.num_d3);
-            this.Controls.Add(this.num_d2);
-            this.Controls.Add(this.num_d1);
+            this.Controls.Add(this.num_d_Drifstrecke);
+            this.Controls.Add(this.num_d_Beschleunigung);
+            this.Controls.Add(this.num_d_Quelle);
             this.Controls.Add(this.num_Vzi);
             this.Controls.Add(this.num_mass);
             this.Controls.Add(this.label2);
@@ -487,9 +616,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_mass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Vzi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_d3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Quelle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Beschleunigung)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_d_Drifstrecke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_Pot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_x)).EndInit();
@@ -529,9 +658,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown num_mass;
         private System.Windows.Forms.NumericUpDown num_Vzi;
-        private System.Windows.Forms.NumericUpDown num_d1;
-        private System.Windows.Forms.NumericUpDown num_d2;
-        private System.Windows.Forms.NumericUpDown num_d3;
+        private System.Windows.Forms.NumericUpDown num_d_Quelle;
+        private System.Windows.Forms.NumericUpDown num_d_Beschleunigung;
+        private System.Windows.Forms.NumericUpDown num_d_Drifstrecke;
         private System.Windows.Forms.NumericUpDown num_Pot1;
         private System.Windows.Forms.NumericUpDown num_Pot2;
         private System.Windows.Forms.NumericUpDown num_x;
@@ -541,6 +670,15 @@
         private System.Windows.Forms.NumericUpDown num_Zi;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label l_ta;
+        private System.Windows.Forms.Label l_tb;
+        private System.Windows.Forms.Label l_tlf;
+        private System.Windows.Forms.Label l_TOF;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox comboBoxElemente;
     }
 }
 
