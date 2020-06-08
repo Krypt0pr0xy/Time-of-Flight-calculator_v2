@@ -6,3 +6,5 @@ Neue Berechnungen
 07.05.2020
 user DAU schutz
 comboBox für auswahl
+08.06.2020
+Kommentierung neue Var Namen
