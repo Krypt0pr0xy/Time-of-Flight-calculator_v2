@@ -15,12 +15,13 @@ namespace TOFCALC
         public Form1()
         {
             InitializeComponent();
+            this.Text = "TOF Calculator";
         }
 
         public class Constants
         {
-            public const double e = 1.602176462e-19;
-            public const double m = 1.6605306660e-27;
+            public const double e = 1.602176462e-19;//Globale Variable Ladung e
+            public const double m = 1.6605306660e-27;//Globale Variable für masse einheit u
 
         }
 
@@ -29,6 +30,7 @@ namespace TOFCALC
 
             double q = Constants.e;
 
+            //abfrage Doppelte ladung oder einzel ladung
             if (rb1.Checked)
             {
                 q *= 1;
@@ -38,6 +40,7 @@ namespace TOFCALC
                 q *= 2;
             }
 
+            //Constante aus Globale Variable 
             double m = Constants.m * (double)num_mass_u.Value;
 
             double d_Quelle = (double)num_d_source_cm.Value / 100;
@@ -63,14 +66,26 @@ namespace TOFCALC
 
             double TOF = ta + tb + tlf;
 
-            l_ta.Text = ta.ToString();
+            if (ta.ToString() == "NaN" || tb.ToString() == "NaN" || tlf.ToString() == "NaN" || TOF.ToString() == "NaN")
+            {
+                l_ta.Text = "Invalid Input";
 
-            l_tb.Text = tb.ToString();
+                l_tb.Text = "";
 
-            l_tlf.Text = tlf.ToString();
+                l_tlf.Text = "";
 
-            l_TOF.Text = TOF.ToString();
+                l_TOF.Text = "";
+            }
+            else
+            {
+                l_ta.Text = ta.ToString() + " seconds";
 
+                l_tb.Text = tb.ToString() + " seconds";
+
+                l_tlf.Text = tlf.ToString() + " seconds";
+
+                l_TOF.Text = TOF.ToString() + " seconds";
+            }
         }
 
         private void num_d_Beschleunigung_ValueChanged(object sender, EventArgs e)
@@ -109,6 +124,11 @@ namespace TOFCALC
             }
 
 
+        }
+
+        private void b_help_Click(object sender, EventArgs e)
+        {
+            new Form_help().ShowDialog();
         }
     }
 }

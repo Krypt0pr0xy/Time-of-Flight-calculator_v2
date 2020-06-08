@@ -76,6 +76,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.comboBoxElemente = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.b_help = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -100,7 +103,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(54, 63);
+            this.label1.Location = new System.Drawing.Point(50, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 25);
@@ -110,7 +113,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(276, 104);
+            this.label3.Location = new System.Drawing.Point(153, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(24, 25);
@@ -120,7 +123,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(352, 104);
+            this.label4.Location = new System.Drawing.Point(229, 95);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(24, 25);
@@ -130,7 +133,7 @@
             // rb1
             // 
             this.rb1.AutoSize = true;
-            this.rb1.Location = new System.Drawing.Point(282, 60);
+            this.rb1.Location = new System.Drawing.Point(150, 63);
             this.rb1.Margin = new System.Windows.Forms.Padding(6);
             this.rb1.Name = "rb1";
             this.rb1.Size = new System.Drawing.Size(27, 26);
@@ -141,7 +144,7 @@
             // rb2
             // 
             this.rb2.AutoSize = true;
-            this.rb2.Location = new System.Drawing.Point(358, 60);
+            this.rb2.Location = new System.Drawing.Point(226, 63);
             this.rb2.Margin = new System.Windows.Forms.Padding(6);
             this.rb2.Name = "rb2";
             this.rb2.Size = new System.Drawing.Size(27, 26);
@@ -172,27 +175,29 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(116, 250);
+            this.pictureBox1.Location = new System.Drawing.Point(109, 199);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 321);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(446, 252);
+            this.pictureBox2.Location = new System.Drawing.Point(439, 201);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 321);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 15;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(166, 583);
+            this.pictureBox3.Location = new System.Drawing.Point(159, 532);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(286, 50);
@@ -203,27 +208,29 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(728, 250);
+            this.pictureBox5.Location = new System.Drawing.Point(721, 199);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(56, 321);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 17;
             this.pictureBox5.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(1190, 250);
+            this.pictureBox7.Location = new System.Drawing.Point(1183, 199);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(56, 321);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 19;
             this.pictureBox7.TabStop = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(208, 648);
+            this.label8.Location = new System.Drawing.Point(201, 597);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(150, 25);
@@ -233,7 +240,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(482, 652);
+            this.label9.Location = new System.Drawing.Point(475, 601);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(199, 25);
@@ -243,7 +250,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(52, 206);
+            this.label11.Location = new System.Drawing.Point(50, 155);
             this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 25);
@@ -253,7 +260,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(362, 206);
+            this.label12.Location = new System.Drawing.Point(380, 155);
             this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 25);
@@ -263,7 +270,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(1206, 206);
+            this.label14.Location = new System.Drawing.Point(1199, 155);
             this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(38, 25);
@@ -273,7 +280,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(288, 390);
+            this.pictureBox8.Location = new System.Drawing.Point(281, 339);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(146, 50);
@@ -284,7 +291,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(260, 344);
+            this.label17.Location = new System.Drawing.Point(253, 293);
             this.label17.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 25);
@@ -294,7 +301,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(924, 652);
+            this.label19.Location = new System.Drawing.Point(917, 601);
             this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(211, 25);
@@ -304,7 +311,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(756, 583);
+            this.pictureBox9.Location = new System.Drawing.Point(749, 532);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(466, 50);
@@ -314,7 +321,7 @@
             // 
             // b_CALC
             // 
-            this.b_CALC.Location = new System.Drawing.Point(1014, 750);
+            this.b_CALC.Location = new System.Drawing.Point(1075, 716);
             this.b_CALC.Margin = new System.Windows.Forms.Padding(6);
             this.b_CALC.Name = "b_CALC";
             this.b_CALC.Size = new System.Drawing.Size(208, 98);
@@ -326,7 +333,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(678, 206);
+            this.label2.Location = new System.Drawing.Point(744, 153);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 25);
@@ -363,7 +370,7 @@
             // num_d_source_cm
             // 
             this.num_d_source_cm.DecimalPlaces = 1;
-            this.num_d_source_cm.Location = new System.Drawing.Point(220, 683);
+            this.num_d_source_cm.Location = new System.Drawing.Point(213, 632);
             this.num_d_source_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_source_cm.Name = "num_d_source_cm";
             this.num_d_source_cm.Size = new System.Drawing.Size(132, 31);
@@ -372,7 +379,7 @@
             // num_d_acceleration_cm
             // 
             this.num_d_acceleration_cm.DecimalPlaces = 1;
-            this.num_d_acceleration_cm.Location = new System.Drawing.Point(556, 683);
+            this.num_d_acceleration_cm.Location = new System.Drawing.Point(549, 632);
             this.num_d_acceleration_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_acceleration_cm.Name = "num_d_acceleration_cm";
             this.num_d_acceleration_cm.Size = new System.Drawing.Size(132, 31);
@@ -381,7 +388,7 @@
             // num_d_drift_distance_cm
             // 
             this.num_d_drift_distance_cm.DecimalPlaces = 1;
-            this.num_d_drift_distance_cm.Location = new System.Drawing.Point(950, 683);
+            this.num_d_drift_distance_cm.Location = new System.Drawing.Point(943, 632);
             this.num_d_drift_distance_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_drift_distance_cm.Name = "num_d_drift_distance_cm";
             this.num_d_drift_distance_cm.Size = new System.Drawing.Size(132, 31);
@@ -389,7 +396,7 @@
             // 
             // num_Pot1_V
             // 
-            this.num_Pot1_V.Location = new System.Drawing.Point(144, 202);
+            this.num_Pot1_V.Location = new System.Drawing.Point(150, 153);
             this.num_Pot1_V.Margin = new System.Windows.Forms.Padding(6);
             this.num_Pot1_V.Maximum = new decimal(new int[] {
             10000,
@@ -414,7 +421,7 @@
             // num_Pot2_V
             // 
             this.num_Pot2_V.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.num_Pot2_V.Location = new System.Drawing.Point(464, 202);
+            this.num_Pot2_V.Location = new System.Drawing.Point(480, 153);
             this.num_Pot2_V.Margin = new System.Windows.Forms.Padding(6);
             this.num_Pot2_V.Maximum = new decimal(new int[] {
             10000,
@@ -434,16 +441,26 @@
             0,
             0,
             65536});
-            this.num_x_cm.Location = new System.Drawing.Point(336, 340);
+            this.num_x_cm.Location = new System.Drawing.Point(329, 289);
             this.num_x_cm.Margin = new System.Windows.Forms.Padding(6);
+            this.num_x_cm.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            786432});
             this.num_x_cm.Name = "num_x_cm";
             this.num_x_cm.Size = new System.Drawing.Size(98, 31);
             this.num_x_cm.TabIndex = 57;
+            this.num_x_cm.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            786432});
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(214, 390);
+            this.pictureBox6.Location = new System.Drawing.Point(207, 339);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 63);
@@ -454,7 +471,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(214, 465);
+            this.pictureBox10.Location = new System.Drawing.Point(207, 414);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 50);
@@ -465,7 +482,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(184, 525);
+            this.label5.Location = new System.Drawing.Point(177, 474);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 25);
@@ -480,16 +497,26 @@
             0,
             0,
             65536});
-            this.num_Zi_cm.Location = new System.Drawing.Point(266, 521);
+            this.num_Zi_cm.Location = new System.Drawing.Point(259, 470);
             this.num_Zi_cm.Margin = new System.Windows.Forms.Padding(6);
+            this.num_Zi_cm.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            786432});
             this.num_Zi_cm.Name = "num_Zi_cm";
             this.num_Zi_cm.Size = new System.Drawing.Size(96, 31);
             this.num_Zi_cm.TabIndex = 61;
+            this.num_Zi_cm.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            786432});
             // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(464, 583);
+            this.pictureBox4.Location = new System.Drawing.Point(457, 532);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(280, 50);
@@ -500,7 +527,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(24, 750);
+            this.label10.Location = new System.Drawing.Point(25, 705);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 25);
@@ -510,7 +537,7 @@
             // l_ta
             // 
             this.l_ta.AutoSize = true;
-            this.l_ta.Location = new System.Drawing.Point(208, 750);
+            this.l_ta.Location = new System.Drawing.Point(209, 705);
             this.l_ta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.l_ta.Name = "l_ta";
             this.l_ta.Size = new System.Drawing.Size(30, 25);
@@ -520,7 +547,7 @@
             // l_tb
             // 
             this.l_tb.AutoSize = true;
-            this.l_tb.Location = new System.Drawing.Point(208, 798);
+            this.l_tb.Location = new System.Drawing.Point(209, 753);
             this.l_tb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.l_tb.Name = "l_tb";
             this.l_tb.Size = new System.Drawing.Size(30, 25);
@@ -530,7 +557,7 @@
             // l_tlf
             // 
             this.l_tlf.AutoSize = true;
-            this.l_tlf.Location = new System.Drawing.Point(208, 846);
+            this.l_tlf.Location = new System.Drawing.Point(209, 801);
             this.l_tlf.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.l_tlf.Name = "l_tlf";
             this.l_tlf.Size = new System.Drawing.Size(29, 25);
@@ -540,7 +567,7 @@
             // l_TOF
             // 
             this.l_TOF.AutoSize = true;
-            this.l_TOF.Location = new System.Drawing.Point(208, 900);
+            this.l_TOF.Location = new System.Drawing.Point(209, 843);
             this.l_TOF.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.l_TOF.Name = "l_TOF";
             this.l_TOF.Size = new System.Drawing.Size(54, 25);
@@ -550,7 +577,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(110, 900);
+            this.label13.Location = new System.Drawing.Point(111, 843);
             this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(60, 25);
@@ -560,7 +587,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(110, 846);
+            this.label15.Location = new System.Drawing.Point(111, 801);
             this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(35, 25);
@@ -570,7 +597,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(110, 798);
+            this.label16.Location = new System.Drawing.Point(111, 753);
             this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(36, 25);
@@ -580,7 +607,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(110, 750);
+            this.label18.Location = new System.Drawing.Point(111, 705);
             this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(36, 25);
@@ -600,11 +627,42 @@
             this.comboBoxElemente.TabIndex = 72;
             this.comboBoxElemente.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(411, 63);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(94, 25);
+            this.label20.TabIndex = 73;
+            this.label20.Text = "element:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(25, 669);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(1524, 25);
+            this.label21.TabIndex = 74;
+            this.label21.Text = resources.GetString("label21.Text");
+            // 
+            // b_help
+            // 
+            this.b_help.Location = new System.Drawing.Point(1159, 829);
+            this.b_help.Name = "b_help";
+            this.b_help.Size = new System.Drawing.Size(124, 58);
+            this.b_help.TabIndex = 75;
+            this.b_help.Text = "HELP";
+            this.b_help.UseVisualStyleBackColor = true;
+            this.b_help.Click += new System.EventHandler(this.b_help_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1338, 965);
+            this.ClientSize = new System.Drawing.Size(1338, 899);
+            this.Controls.Add(this.b_help);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label20);
             this.Controls.Add(this.comboBoxElemente);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label15);
@@ -651,6 +709,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = " ";
@@ -726,6 +785,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBoxElemente;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button b_help;
     }
 }
 
