@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace TOFCALC
 {
     public partial class Form1 : Form
@@ -16,14 +17,22 @@ namespace TOFCALC
         {
             InitializeComponent();
             this.Text = "TOF Calculator";
+            for (int i = 0; i < Constants.max_elements; i++)
+            {
+                comboBoxElemente.Items.Add(array2D_Elements[0, i]);
+            }
         }
 
         public class Constants
         {
             public const double e = 1.602176462e-19;//Globale Variable Ladung e
             public const double m = 1.6605306660e-27;//Globale Variable für masse einheit u
-
+            public const int max_elements = 25;
         }
+        //refernz von https://de.webqc.org/mmcalc.php
+        string[,] array2D_Elements = new string[2, Constants.max_elements] {
+            {"H",    "H2",   "He",      "He2",     "HD",      "CH3F",   "OCS",    "C",       "S",      "O",       "O2",      "H2O",     "N2",       "CH",       "CH2",     "CH3",    "CO",     "Ar",     "Ar2",    "Ne",      "Ne2",    "Xe",      "Xe2",     "Mg",      "MgAr"},
+            {"1,008","2.016","4,002602","8,005204","3,022042","34,0329","60,0751","12,01070","32,0650","15,99940","31,99880","18,01528","28,01340", "13,01864", "14,02658","15,0345","28,0101","39,9480","79,8960","20,17970","40,3594","131,2930","262,5860","24,30500","64,2530"} };
 
         private void b_CALC_Click(object sender, EventArgs e)
         {
@@ -114,16 +123,13 @@ namespace TOFCALC
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxElemente.Text == "Wasserstoff")
+            for(int i = 0; i<Constants.max_elements; i++)
             {
-                num_mass_u.Value = (decimal)1.008;
+                if(comboBoxElemente.Text == array2D_Elements[0,i])
+                {
+                    num_mass_u.Value = (decimal)float.Parse(array2D_Elements[1, i]);
+                }
             }
-            else if (comboBoxElemente.Text == "Helium")
-            {
-                num_mass_u.Value = (decimal)4.002602;
-            }
-
-
         }
 
         private void b_help_Click(object sender, EventArgs e)

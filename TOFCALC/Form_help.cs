@@ -17,6 +17,5 @@ namespace TOFCALC
             InitializeComponent();
             this.Text = "TOF Calculator Help";
         }
-
     }
 }
