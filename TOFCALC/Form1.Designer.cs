@@ -321,6 +321,11 @@
             // 
             this.num_mass_u.DecimalPlaces = 5;
             this.num_mass_u.Location = new System.Drawing.Point(404, 31);
+            this.num_mass_u.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.num_mass_u.Name = "num_mass_u";
             this.num_mass_u.Size = new System.Drawing.Size(76, 20);
             this.num_mass_u.TabIndex = 49;
@@ -572,9 +577,6 @@
             // comboBoxElemente
             // 
             this.comboBoxElemente.FormattingEnabled = true;
-            this.comboBoxElemente.Items.AddRange(new object[] {
-            "H",
-            "He"});
             this.comboBoxElemente.Location = new System.Drawing.Point(257, 30);
             this.comboBoxElemente.Name = "comboBoxElemente";
             this.comboBoxElemente.Size = new System.Drawing.Size(82, 21);

@@ -32,7 +32,7 @@ namespace TOFCALC
         //refernz von https://de.webqc.org/mmcalc.php
         string[,] array2D_Elements = new string[2, Constants.max_elements] {
             {"H",    "H2",   "He",      "He2",     "HD",      "CH3F",   "OCS",    "C",       "S",      "O",       "O2",      "H2O",     "N2",       "CH",       "CH2",     "CH3",    "CO",     "Ar",     "Ar2",    "Ne",      "Ne2",    "Xe",      "Xe2",     "Mg",      "MgAr"},
-            {"1,008","2.016","4,002602","8,005204","3,022042","34,0329","60,0751","12,01070","32,0650","15,99940","31,99880","18,01528","28,01340", "13,01864", "14,02658","15,0345","28,0101","39,9480","79,8960","20,17970","40,3594","131,2930","262,5860","24,30500","64,2530"} };
+            {"1,008","2,01588","4,002602","8,005204","3,022042","34,0329","60,0751","12,01070","32,0650","15,99940","31,99880","18,01528","28,01340", "13,01864", "14,02658","15,0345","28,0101","39,9480","79,8960","20,17970","40,3594","131,2930","262,5860","24,30500","64,2530"} };
 
         private void b_CALC_Click(object sender, EventArgs e)
         {
@@ -109,7 +109,7 @@ namespace TOFCALC
         {
             while(num_Pot1_V.Value <= num_Pot2_V.Value)
             {
-                num_Pot2_V.Value -= 1;
+                num_Pot2_V.Value = num_Pot1_V.Value - 1;
             }
         }
 
@@ -117,7 +117,7 @@ namespace TOFCALC
         {
             while (num_Pot1_V.Value <= num_Pot2_V.Value)
             {
-                num_Pot1_V.Value += 1;
+                num_Pot1_V.Value = num_Pot2_V.Value + 1;
             }
         }
 
