@@ -403,9 +403,19 @@
             0,
             0,
             0});
+            this.num_Pot2_V.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.num_Pot2_V.Name = "num_Pot2_V";
             this.num_Pot2_V.Size = new System.Drawing.Size(66, 20);
             this.num_Pot2_V.TabIndex = 55;
+            this.num_Pot2_V.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.num_Pot2_V.ValueChanged += new System.EventHandler(this.num_Pot2_V_ValueChanged);
             // 
             // num_x_cm
