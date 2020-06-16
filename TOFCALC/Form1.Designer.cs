@@ -365,11 +365,6 @@
             0,
             0,
             0});
-            this.num_Vzi.Minimum = new decimal(new int[] {
-            3000,
-            0,
-            0,
-            -2147483648});
             this.num_Vzi.Name = "num_Vzi";
             this.num_Vzi.Size = new System.Drawing.Size(152, 31);
             this.num_Vzi.TabIndex = 50;
