@@ -133,16 +133,22 @@ namespace TOFCALC
             //Try catch für Not a Number
             if (t_source.ToString() == "NaN" || t_acceleration.ToString() == "NaN" || t_drift_distance.ToString() == "NaN" || TOF.ToString() == "NaN")
             {
-                l_t_source.Text = "Invalid Input";
+                string error = "Invalid Input";
 
-                l_t_acceleration.Text = "";
+                l_va.Text = error;
 
-                l_t_drift_distance.Text = "";
+                l_vb.Text = error;
 
-                l_TOF.Text = "";
+                l_t_source.Text = error;
+
+                l_t_acceleration.Text = error;
+
+                l_t_drift_distance.Text = error;
+
+                l_TOF.Text = error;
             }
             else
-            {
+            { 
                 l_t_source.Text = ToEngineeringNotation(t_source) + " seconds";
 
                 l_t_acceleration.Text = ToEngineeringNotation(t_acceleration) + " seconds";
@@ -150,18 +156,15 @@ namespace TOFCALC
                 l_t_drift_distance.Text = ToEngineeringNotation(t_drift_distance) + " seconds";
 
                 l_TOF.Text = ToEngineeringNotation(TOF) + " seconds";
+
+                l_va.Text = ToEngineeringNotation(Va) + " m/s";
+
+                l_vb.Text = ToEngineeringNotation(Vb) + " m/s";
             }
         }
 
        
-        private void num_d_Beschleunigung_ValueChanged(object sender, EventArgs e)
-        {
-            if(num_d_acceleration_cm.Value == 0)
-            {
-                num_Pot2_V.Value = 0;
-            }
-        }
-
+    
         private void num_Pot1_V_ValueChanged(object sender, EventArgs e)
         {
             while(num_Pot1_V.Value <= num_Pot2_V.Value)
@@ -175,6 +178,10 @@ namespace TOFCALC
             while (num_Pot1_V.Value <= num_Pot2_V.Value)
             {
                 num_Pot1_V.Value = num_Pot2_V.Value + 1;
+            }
+            if(num_Pot2_V.Value == 0)
+            {
+                num_d_acceleration_cm.Value = 0;
             }
         }
 
@@ -198,6 +205,30 @@ namespace TOFCALC
         private void num_mass_u_ValueChanged(object sender, EventArgs e)
         {
             comboBoxElemente.Text = "";
+        }
+
+        private void num_d_source_cm_ValueChanged(object sender, EventArgs e)
+        {
+            if(num_d_source_cm.Value < num_x_cm.Value)
+            {
+                num_d_source_cm.Value += 1; 
+            }
+        }
+
+        private void num_x_cm_ValueChanged(object sender, EventArgs e)
+        {
+            if (num_x_cm.Value > num_d_source_cm.Value)
+            {
+                num_x_cm.Value -= 1;
+            }
+        }
+
+        private void num_d_acceleration_cm_ValueChanged(object sender, EventArgs e)
+        {
+            if(num_d_acceleration_cm.Value == 0)
+            {
+                num_Pot2_V.Value = 0;
+            }
         }
     }
 }
