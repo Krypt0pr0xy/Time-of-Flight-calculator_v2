@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace TOFCALC
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -34,8 +35,59 @@ namespace TOFCALC
 
         string[] array_Elements_name = new string[Constants.max_elements] {"H",    "H2",    "He",     "He2",    "HD",     "CH3F",  "OCS",   "C",      "S",     "O",      "O2",     "H2O",    "N2",     "CH",     "CH2",    "CH3",   "CO",    "Ar",    "Ar2",   "Ne",     "Ne2",   "Xe",     "Xe2",    "Mg",     "MgAr"};
         double[] array_Elements_mass = new double[Constants.max_elements] { 1.008, 2.01588, 4.002602, 8.005204, 3.022042, 34.0329, 60.0751, 12.01070, 32.0650, 15.99940, 31.99880, 18.01528, 28.01340, 13.01864, 14.02658, 15.0345, 28.0101, 39.9480, 79.8960, 20.17970, 40.3594, 131.2930, 262.5860, 24.30500, 64.2530 };
+        
+        public string ToEngineeringNotation(double input)
+        {
+            double exponent = Math.Log10(Math.Abs(input));
+            if (Math.Abs(input) >= 1)
+            {
+                switch ((int)Math.Floor(exponent))
+                {
+                    case 0: case 1: case 2:
+                        return input.ToString();
 
+                    case 3: case 4: case 5:
+                        return (input / 1e3).ToString() + "k";
 
+                    case 6: case 7: case 8:
+                        return (input / 1e6).ToString() + "M";
+
+                    case 9: case 10: case 11:
+                        return (input / 1e9).ToString() + "G";
+
+                    case 12: case 13:case 14:
+                        return (input / 1e12).ToString() + "T";
+
+                    default:
+                        return input.ToString();
+                }
+            }
+            else if (Math.Abs(input) > 0)
+            {
+                switch ((int)Math.Floor(exponent))
+                {
+                    case -1: case -2: case -3:
+                        return (input * 1e3).ToString() + "m";
+
+                    case -4: case -5: case -6:
+                        return (input * 1e6).ToString() + "μ";
+
+                    case -7: case -8: case -9:
+                        return (input * 1e9).ToString() + "n";
+
+                    case -10: case -11: case -12:
+                        return (input * 1e12).ToString() + "p";
+                    
+                    default:
+                        return input.ToString();
+                }
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        
         private void b_CALC_Click(object sender, EventArgs e)
         {
 
@@ -67,37 +119,37 @@ namespace TOFCALC
 
             double Va = Math.Sqrt(2 * x * q * ((Pot1_V - Pot2_V) / m));
 
-            double ta = ((2 * d_Quelle) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d_Quelle))) - (Vzi / Va));
+            double t_source = ((2 * d_Quelle) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d_Quelle))) - (Vzi / Va));
 
             double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2_V / m));
 
-            double tb = ((2 * d_Beschleunigung) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)));
+            double t_acceleration = ((2 * d_Beschleunigung) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)));
 
-            double tlf = d_Drifstrecke * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2))));
+            double t_drift_distance = d_Drifstrecke * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2))));
 
-            double TOF = ta + tb + tlf;
+            double TOF = t_source + t_acceleration + t_drift_distance;
 
 
             //Try catch für Not a Number
-            if (ta.ToString() == "NaN" || tb.ToString() == "NaN" || tlf.ToString() == "NaN" || TOF.ToString() == "NaN")
+            if (t_source.ToString() == "NaN" || t_acceleration.ToString() == "NaN" || t_drift_distance.ToString() == "NaN" || TOF.ToString() == "NaN")
             {
-                l_ta.Text = "Invalid Input";
+                l_t_source.Text = "Invalid Input";
 
-                l_tb.Text = "";
+                l_t_acceleration.Text = "";
 
-                l_tlf.Text = "";
+                l_t_drift_distance.Text = "";
 
                 l_TOF.Text = "";
             }
             else
             {
-                l_ta.Text = ta.ToString() + " seconds";
+                l_t_source.Text = ToEngineeringNotation(t_source) + " seconds";
 
-                l_tb.Text = tb.ToString() + " seconds";
+                l_t_acceleration.Text = ToEngineeringNotation(t_acceleration) + " seconds";
 
-                l_tlf.Text = tlf.ToString() + " seconds";
+                l_t_drift_distance.Text = ToEngineeringNotation(t_drift_distance) + " seconds";
 
-                l_TOF.Text = TOF.ToString() + " seconds";
+                l_TOF.Text = ToEngineeringNotation(TOF) + " seconds";
             }
         }
 
@@ -141,6 +193,11 @@ namespace TOFCALC
         private void b_help_Click(object sender, EventArgs e)
         {
             new Form_help().ShowDialog();
+        }
+
+        private void num_mass_u_ValueChanged(object sender, EventArgs e)
+        {
+            comboBoxElemente.Text = "";
         }
     }
 }

@@ -67,9 +67,9 @@
             this.num_Zi_cm = new System.Windows.Forms.NumericUpDown();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.l_ta = new System.Windows.Forms.Label();
-            this.l_tb = new System.Windows.Forms.Label();
-            this.l_tlf = new System.Windows.Forms.Label();
+            this.l_t_source = new System.Windows.Forms.Label();
+            this.l_t_acceleration = new System.Windows.Forms.Label();
+            this.l_t_drift_distance = new System.Windows.Forms.Label();
             this.l_TOF = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.b_help = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -133,8 +134,9 @@
             // rb1
             // 
             this.rb1.AutoSize = true;
+            this.rb1.Checked = true;
             this.rb1.Location = new System.Drawing.Point(150, 63);
-            this.rb1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rb1.Margin = new System.Windows.Forms.Padding(6);
             this.rb1.Name = "rb1";
             this.rb1.Size = new System.Drawing.Size(27, 26);
             this.rb1.TabIndex = 6;
@@ -145,11 +147,10 @@
             // 
             this.rb2.AutoSize = true;
             this.rb2.Location = new System.Drawing.Point(226, 63);
-            this.rb2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.rb2.Margin = new System.Windows.Forms.Padding(6);
             this.rb2.Name = "rb2";
             this.rb2.Size = new System.Drawing.Size(27, 26);
             this.rb2.TabIndex = 7;
-            this.rb2.TabStop = true;
             this.rb2.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -176,7 +177,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(108, 198);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 321);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -187,7 +188,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(440, 202);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(56, 321);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -198,7 +199,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(160, 533);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(286, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -209,7 +210,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(720, 198);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(56, 321);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -220,7 +221,7 @@
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(1184, 198);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(56, 321);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,9 +234,9 @@
             this.label8.Location = new System.Drawing.Point(200, 596);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 25);
+            this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 21;
-            this.label8.Text = "d_Source[cm]:";
+            this.label8.Text = "d_source[cm]:";
             // 
             // label9
             // 
@@ -281,7 +282,7 @@
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
             this.pictureBox8.Location = new System.Drawing.Point(280, 338);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(146, 50);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -312,7 +313,7 @@
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
             this.pictureBox9.Location = new System.Drawing.Point(748, 533);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(466, 50);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -321,10 +322,10 @@
             // 
             // b_CALC
             // 
-            this.b_CALC.Location = new System.Drawing.Point(1076, 715);
-            this.b_CALC.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.b_CALC.Location = new System.Drawing.Point(1165, 700);
+            this.b_CALC.Margin = new System.Windows.Forms.Padding(6);
             this.b_CALC.Name = "b_CALC";
-            this.b_CALC.Size = new System.Drawing.Size(208, 98);
+            this.b_CALC.Size = new System.Drawing.Size(170, 71);
             this.b_CALC.TabIndex = 47;
             this.b_CALC.Text = "Calculate";
             this.b_CALC.UseVisualStyleBackColor = true;
@@ -344,7 +345,7 @@
             // 
             this.num_mass_u.DecimalPlaces = 5;
             this.num_mass_u.Location = new System.Drawing.Point(808, 60);
-            this.num_mass_u.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_mass_u.Margin = new System.Windows.Forms.Padding(6);
             this.num_mass_u.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -353,11 +354,12 @@
             this.num_mass_u.Name = "num_mass_u";
             this.num_mass_u.Size = new System.Drawing.Size(152, 31);
             this.num_mass_u.TabIndex = 49;
+            this.num_mass_u.ValueChanged += new System.EventHandler(this.num_mass_u_ValueChanged);
             // 
             // num_Vzi
             // 
             this.num_Vzi.Location = new System.Drawing.Point(1094, 60);
-            this.num_Vzi.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_Vzi.Margin = new System.Windows.Forms.Padding(6);
             this.num_Vzi.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -376,33 +378,48 @@
             // 
             this.num_d_source_cm.DecimalPlaces = 1;
             this.num_d_source_cm.Location = new System.Drawing.Point(212, 633);
-            this.num_d_source_cm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_d_source_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_source_cm.Name = "num_d_source_cm";
             this.num_d_source_cm.Size = new System.Drawing.Size(132, 31);
             this.num_d_source_cm.TabIndex = 51;
+            this.num_d_source_cm.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            65536});
             // 
             // num_d_acceleration_cm
             // 
             this.num_d_acceleration_cm.DecimalPlaces = 1;
             this.num_d_acceleration_cm.Location = new System.Drawing.Point(548, 633);
-            this.num_d_acceleration_cm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_d_acceleration_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_acceleration_cm.Name = "num_d_acceleration_cm";
             this.num_d_acceleration_cm.Size = new System.Drawing.Size(132, 31);
             this.num_d_acceleration_cm.TabIndex = 52;
+            this.num_d_acceleration_cm.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            65536});
             // 
             // num_d_drift_distance_cm
             // 
             this.num_d_drift_distance_cm.DecimalPlaces = 1;
             this.num_d_drift_distance_cm.Location = new System.Drawing.Point(944, 633);
-            this.num_d_drift_distance_cm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_d_drift_distance_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_drift_distance_cm.Name = "num_d_drift_distance_cm";
             this.num_d_drift_distance_cm.Size = new System.Drawing.Size(132, 31);
             this.num_d_drift_distance_cm.TabIndex = 53;
+            this.num_d_drift_distance_cm.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            65536});
             // 
             // num_Pot1_V
             // 
             this.num_Pot1_V.Location = new System.Drawing.Point(150, 154);
-            this.num_Pot1_V.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_Pot1_V.Margin = new System.Windows.Forms.Padding(6);
             this.num_Pot1_V.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -417,7 +434,7 @@
             this.num_Pot1_V.Size = new System.Drawing.Size(132, 31);
             this.num_Pot1_V.TabIndex = 54;
             this.num_Pot1_V.Value = new decimal(new int[] {
-            1,
+            1000,
             0,
             0,
             0});
@@ -427,7 +444,7 @@
             // 
             this.num_Pot2_V.ForeColor = System.Drawing.SystemColors.WindowText;
             this.num_Pot2_V.Location = new System.Drawing.Point(480, 154);
-            this.num_Pot2_V.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_Pot2_V.Margin = new System.Windows.Forms.Padding(6);
             this.num_Pot2_V.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -442,7 +459,7 @@
             this.num_Pot2_V.Size = new System.Drawing.Size(132, 31);
             this.num_Pot2_V.TabIndex = 55;
             this.num_Pot2_V.Value = new decimal(new int[] {
-            1,
+            500,
             0,
             0,
             0});
@@ -457,7 +474,7 @@
             0,
             65536});
             this.num_x_cm.Location = new System.Drawing.Point(328, 288);
-            this.num_x_cm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_x_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_x_cm.Minimum = new decimal(new int[] {
             1,
             0,
@@ -467,16 +484,16 @@
             this.num_x_cm.Size = new System.Drawing.Size(98, 31);
             this.num_x_cm.TabIndex = 57;
             this.num_x_cm.Value = new decimal(new int[] {
-            1,
+            25,
             0,
             0,
-            786432});
+            65536});
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(208, 338);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(70, 63);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -487,7 +504,7 @@
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
             this.pictureBox10.Location = new System.Drawing.Point(208, 413);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(70, 50);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -513,7 +530,7 @@
             0,
             65536});
             this.num_Zi_cm.Location = new System.Drawing.Point(260, 469);
-            this.num_Zi_cm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.num_Zi_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_Zi_cm.Minimum = new decimal(new int[] {
             1,
             0,
@@ -532,7 +549,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(456, 533);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(280, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -549,40 +566,40 @@
             this.label10.TabIndex = 63;
             this.label10.Text = "Output:";
             // 
-            // l_ta
+            // l_t_source
             // 
-            this.l_ta.AutoSize = true;
-            this.l_ta.Location = new System.Drawing.Point(208, 706);
-            this.l_ta.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.l_ta.Name = "l_ta";
-            this.l_ta.Size = new System.Drawing.Size(30, 25);
-            this.l_ta.TabIndex = 64;
-            this.l_ta.Text = "ta";
+            this.l_t_source.AutoSize = true;
+            this.l_t_source.Location = new System.Drawing.Point(354, 706);
+            this.l_t_source.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.l_t_source.Name = "l_t_source";
+            this.l_t_source.Size = new System.Drawing.Size(95, 25);
+            this.l_t_source.TabIndex = 64;
+            this.l_t_source.Text = "t_source";
             // 
-            // l_tb
+            // l_t_acceleration
             // 
-            this.l_tb.AutoSize = true;
-            this.l_tb.Location = new System.Drawing.Point(208, 754);
-            this.l_tb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.l_tb.Name = "l_tb";
-            this.l_tb.Size = new System.Drawing.Size(30, 25);
-            this.l_tb.TabIndex = 65;
-            this.l_tb.Text = "tb";
+            this.l_t_acceleration.AutoSize = true;
+            this.l_t_acceleration.Location = new System.Drawing.Point(354, 752);
+            this.l_t_acceleration.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.l_t_acceleration.Name = "l_t_acceleration";
+            this.l_t_acceleration.Size = new System.Drawing.Size(147, 25);
+            this.l_t_acceleration.TabIndex = 65;
+            this.l_t_acceleration.Text = "t_acceleration";
             // 
-            // l_tlf
+            // l_t_drift_distance
             // 
-            this.l_tlf.AutoSize = true;
-            this.l_tlf.Location = new System.Drawing.Point(208, 802);
-            this.l_tlf.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.l_tlf.Name = "l_tlf";
-            this.l_tlf.Size = new System.Drawing.Size(29, 25);
-            this.l_tlf.TabIndex = 66;
-            this.l_tlf.Text = "tlf";
+            this.l_t_drift_distance.AutoSize = true;
+            this.l_t_drift_distance.Location = new System.Drawing.Point(354, 799);
+            this.l_t_drift_distance.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.l_t_drift_distance.Name = "l_t_drift_distance";
+            this.l_t_drift_distance.Size = new System.Drawing.Size(159, 25);
+            this.l_t_drift_distance.TabIndex = 66;
+            this.l_t_drift_distance.Text = "t_drift_distance";
             // 
             // l_TOF
             // 
             this.l_TOF.AutoSize = true;
-            this.l_TOF.Location = new System.Drawing.Point(208, 842);
+            this.l_TOF.Location = new System.Drawing.Point(354, 842);
             this.l_TOF.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.l_TOF.Name = "l_TOF";
             this.l_TOF.Size = new System.Drawing.Size(54, 25);
@@ -602,22 +619,22 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(112, 802);
+            this.label15.Location = new System.Drawing.Point(112, 799);
             this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 25);
+            this.label15.Size = new System.Drawing.Size(165, 25);
             this.label15.TabIndex = 70;
-            this.label15.Text = "tlf:";
+            this.label15.Text = "t_drift_distance:";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(112, 754);
+            this.label16.Location = new System.Drawing.Point(112, 752);
             this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 25);
+            this.label16.Size = new System.Drawing.Size(153, 25);
             this.label16.TabIndex = 69;
-            this.label16.Text = "tb:";
+            this.label16.Text = "t_acceleration:";
             // 
             // label18
             // 
@@ -625,15 +642,15 @@
             this.label18.Location = new System.Drawing.Point(112, 706);
             this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(36, 25);
+            this.label18.Size = new System.Drawing.Size(101, 25);
             this.label18.TabIndex = 68;
-            this.label18.Text = "ta:";
+            this.label18.Text = "t_source:";
             // 
             // comboBoxElemente
             // 
             this.comboBoxElemente.FormattingEnabled = true;
             this.comboBoxElemente.Location = new System.Drawing.Point(514, 58);
-            this.comboBoxElemente.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.comboBoxElemente.Margin = new System.Windows.Forms.Padding(6);
             this.comboBoxElemente.Name = "comboBoxElemente";
             this.comboBoxElemente.Size = new System.Drawing.Size(160, 33);
             this.comboBoxElemente.TabIndex = 72;
@@ -661,21 +678,32 @@
             // 
             // b_help
             // 
-            this.b_help.Location = new System.Drawing.Point(1160, 829);
-            this.b_help.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.b_help.Location = new System.Drawing.Point(1238, 825);
+            this.b_help.Margin = new System.Windows.Forms.Padding(4);
             this.b_help.Name = "b_help";
-            this.b_help.Size = new System.Drawing.Size(124, 58);
+            this.b_help.Size = new System.Drawing.Size(97, 42);
             this.b_help.TabIndex = 75;
             this.b_help.Text = "HELP";
             this.b_help.UseVisualStyleBackColor = true;
             this.b_help.Click += new System.EventHandler(this.b_help_Click);
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(869, 834);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(362, 25);
+            this.label22.TabIndex = 76;
+            this.label22.Text = "Cyrill Wyler  Version 1.1  16.06.2020";
+            // 
             // Form1
             // 
+            this.AccessibleName = "TOF Calculator";
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1338, 898);
+            this.ClientSize = new System.Drawing.Size(1350, 890);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.b_help);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -685,9 +713,9 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.l_TOF);
-            this.Controls.Add(this.l_tlf);
-            this.Controls.Add(this.l_tb);
-            this.Controls.Add(this.l_ta);
+            this.Controls.Add(this.l_t_drift_distance);
+            this.Controls.Add(this.l_t_acceleration);
+            this.Controls.Add(this.l_t_source);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.num_Zi_cm);
@@ -725,8 +753,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -792,9 +821,9 @@
         private System.Windows.Forms.NumericUpDown num_Zi_cm;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label l_ta;
-        private System.Windows.Forms.Label l_tb;
-        private System.Windows.Forms.Label l_tlf;
+        private System.Windows.Forms.Label l_t_source;
+        private System.Windows.Forms.Label l_t_acceleration;
+        private System.Windows.Forms.Label l_t_drift_distance;
         private System.Windows.Forms.Label l_TOF;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
@@ -804,6 +833,7 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button b_help;
+        private System.Windows.Forms.Label label22;
     }
 }
 
