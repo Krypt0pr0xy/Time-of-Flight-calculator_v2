@@ -18,6 +18,7 @@ namespace TOFCALC
         {
             InitializeComponent();
             this.Text = "TOF Calculator";//Titel
+
             //Elemente zu comboBox hinzufügen 
             for (int i = 0; i < Constants.max_elements; i++)
             {
@@ -33,9 +34,11 @@ namespace TOFCALC
         }
         //refernz von https://de.webqc.org/mmcalc.php
 
+        //liste der Elemente
         string[] array_Elements_name = new string[Constants.max_elements] {"H",    "H2",    "He",     "He2",    "HD",     "CH3F",  "OCS",   "C",      "S",     "O",      "O2",     "H2O",    "N2",     "CH",     "CH2",    "CH3",   "CO",    "Ar",    "Ar2",   "Ne",     "Ne2",   "Xe",     "Xe2",    "Mg",     "MgAr"};
         double[] array_Elements_mass = new double[Constants.max_elements] { 1.008, 2.01588, 4.002602, 8.005204, 3.022042, 34.0329, 60.0751, 12.01070, 32.0650, 15.99940, 31.99880, 18.01528, 28.01340, 13.01864, 14.02658, 15.0345, 28.0101, 39.9480, 79.8960, 20.17970, 40.3594, 131.2930, 262.5860, 24.30500, 64.2530 };
         
+        //double to string mit engeneering zusatzt
         public string ToEngineeringNotation(double input)
         {
             double exponent = Math.Log10(Math.Abs(input));
@@ -91,7 +94,7 @@ namespace TOFCALC
         private void b_CALC_Click(object sender, EventArgs e)
         {
 
-            double q = Constants.e;
+            double q = Constants.e;//ladung
 
             //abfrage Doppelte ladung oder einzel ladung
             if (rb1.Checked)
@@ -104,24 +107,24 @@ namespace TOFCALC
             }
 
             //Constante aus Globale Variable 
-            double m = Constants.m * (double)num_mass_u.Value;
+            double m = Constants.m * (double)num_mass_u.Value;//masse
 
-            double d_Quelle = (double)num_d_source_cm.Value / 100;
-            double d_Beschleunigung = (double)num_d_acceleration_cm.Value / 100;
-            double d_Drifstrecke = (double)num_d_drift_distance_cm.Value / 100;
-            double x = (double)num_x_cm.Value / 100;
+            double d_Quelle = (double)num_d_source_cm.Value / 100;//cm in m
+            double d_Beschleunigung = (double)num_d_acceleration_cm.Value / 100;//cm in m
+            double d_Drifstrecke = (double)num_d_drift_distance_cm.Value / 100;//cm in m
+            double x = (double)num_x_cm.Value / 100;//cm in m
             double Vzi = (double)num_Vzi.Value;
-            double zi = (double)num_Zi_cm.Value / 100;
+            double zi = (double)num_Zi_cm.Value / 100;//cm in mea
             double Pot1_V = (double)num_Pot1_V.Value;
             double Pot2_V = (double)num_Pot2_V.Value;
 
 
 
-            double Va = Math.Sqrt(2 * x * q * ((Pot1_V - Pot2_V) / m));
+            double Va = Math.Sqrt(2 * (x/d_Quelle) * q * ((Pot1_V - Pot2_V) / m));
 
             double t_source = ((2 * d_Quelle) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d_Quelle))) - (Vzi / Va));
 
-            double Vb = Math.Sqrt(Math.Pow(Va, 2) * 2 * x * q * (Pot2_V / m));
+            double Vb = Math.Sqrt(Math.Pow(Va, 2) + 2 * x * q * (Pot2_V / m));
 
             double t_acceleration = ((2 * d_Beschleunigung) / (Math.Pow(Vb,2)-Math.Pow(Va,2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)));
 
@@ -135,6 +138,7 @@ namespace TOFCALC
             {
                 string error = "Invalid Input";
 
+                //allen ausgabe falsch
                 l_va.Text = error;
 
                 l_vb.Text = error;

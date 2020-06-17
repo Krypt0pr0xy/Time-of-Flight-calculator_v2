@@ -376,6 +376,11 @@
             // num_d_source_cm
             // 
             this.num_d_source_cm.DecimalPlaces = 1;
+            this.num_d_source_cm.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.num_d_source_cm.Location = new System.Drawing.Point(212, 633);
             this.num_d_source_cm.Margin = new System.Windows.Forms.Padding(6);
             this.num_d_source_cm.Name = "num_d_source_cm";
