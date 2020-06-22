@@ -234,5 +234,14 @@ namespace TOFCALC
                 num_Pot2_V.Value = 0;
             }
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Als ausgewählt markieren
+            this.linkLabel1.LinkVisited = true;
+
+            //Zu URL navigieren
+            System.Diagnostics.Process.Start("https://github.com/Krypt0pr0xy/Time-of-light-calculator_v2");
+        }
     }
 }

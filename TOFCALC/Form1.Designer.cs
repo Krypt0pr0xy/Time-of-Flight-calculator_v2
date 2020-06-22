@@ -79,11 +79,11 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.b_help = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
             this.l_va = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.l_vb = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -680,7 +680,7 @@
             // 
             // b_help
             // 
-            this.b_help.Location = new System.Drawing.Point(1228, 930);
+            this.b_help.Location = new System.Drawing.Point(1241, 811);
             this.b_help.Margin = new System.Windows.Forms.Padding(4);
             this.b_help.Name = "b_help";
             this.b_help.Size = new System.Drawing.Size(97, 42);
@@ -688,15 +688,6 @@
             this.b_help.Text = "HELP";
             this.b_help.UseVisualStyleBackColor = true;
             this.b_help.Click += new System.EventHandler(this.b_help_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(859, 939);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(362, 25);
-            this.label22.TabIndex = 76;
-            this.label22.Text = "Cyrill Wyler  Version 1.1  16.06.2020";
             // 
             // l_va
             // 
@@ -734,6 +725,17 @@
             this.label25.TabIndex = 80;
             this.label25.Text = "vb";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(849, 963);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(489, 25);
+            this.linkLabel1.TabIndex = 81;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Time-of-light-calculator_v2  Version 2  16.06.2020";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // Form1
             // 
             this.AccessibleName = "TOF Calculator";
@@ -742,11 +744,11 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1350, 997);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.l_vb);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.l_va);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.b_help);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -875,11 +877,11 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button b_help;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label l_va;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label l_vb;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
