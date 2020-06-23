@@ -17,7 +17,7 @@ namespace TOFCALC
         public Form1()
         {
             InitializeComponent();
-            this.Text = "TOF Calculator";//Titel 
+            this.Text = "TOF Calculator";//Titel  
 
             //Elemente zu comboBox hinzufügen 
             for (int i = 0; i < Constants.max_elements; i++)
