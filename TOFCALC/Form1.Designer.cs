@@ -689,10 +689,10 @@
             this.linkLabel1.Location = new System.Drawing.Point(424, 501);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(250, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(256, 13);
             this.linkLabel1.TabIndex = 81;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Time-of-light-calculator_v2.1  Version 2  16.06.2020";
+            this.linkLabel1.Text = "Time-of-Flight-calculator_v2.1  Version 2  16.06.2020";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
