@@ -114,7 +114,7 @@ namespace TOFCALC
             double d_Drifstrecke = (double)num_d_drift_distance_cm.Value / 100;//cm in m
             double x = (double)num_x_cm.Value / 100;//cm in m
             double Vzi = (double)num_Vzi.Value;
-            double zi = (double)num_Zi_cm.Value / 100;//cm in mea
+            double zi = (double)num_Zi_cm.Value / 100;//cm in m
             double Pot1_V = (double)num_Pot1_V.Value;
             double Pot2_V = (double)num_Pot2_V.Value;
 
