@@ -122,16 +122,16 @@ namespace TOFCALC
             double Va = Math.Sqrt(2 * (x / d_Quelle) * q * ((Pot1_V - Pot2_V) / m));
 
 
-            double t_source = ((2 * d_Quelle) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / d_Quelle))) - (Vzi / Va));
+            double t_source = ((2 * x) / Va) * (Math.Sqrt(1 + (Math.Pow(Vzi / Va, 2) - (zi / x))) - (Vzi / Va));
 
 
-            double Vb = Math.Sqrt(Math.Pow(Va, 2) + 2 * x * q * (Pot2_V / m));
+            double Vb = Math.Sqrt(Math.Pow(Va, 2) + 2 * q * (Pot2_V / m));
 
 
-            double t_acceleration = ((2 * d_Beschleunigung) / (Math.Pow(Vb, 2) - Math.Pow(Va, 2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2)));
+            double t_acceleration = ((2 * d_Beschleunigung) / (Math.Pow(Vb, 2) - Math.Pow(Va, 2))) * (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / x) * Math.Pow(Va, 2)) - Math.Sqrt(Math.Pow(Va, 2) + Math.Pow(Vzi, 2) - (zi / x) * Math.Pow(Va, 2)));
 
 
-            double t_drift_distance = d_Drifstrecke * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / d_Quelle) * Math.Pow(Va, 2))));
+            double t_drift_distance = d_Drifstrecke * (1 / (Math.Sqrt(Math.Pow(Vb, 2) + Math.Pow(Vzi, 2) - (zi / x) * Math.Pow(Va, 2))));
 
 
             double TOF = t_source + t_acceleration + t_drift_distance;
